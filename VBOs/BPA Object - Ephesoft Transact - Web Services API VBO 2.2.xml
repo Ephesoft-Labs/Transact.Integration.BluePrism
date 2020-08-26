@@ -1,0 +1,1964 @@
+﻿<process name="Ephesoft Transact - Web Services API VBO" version="1.0" bpversion="6.4.2.10610" narrative="" byrefcollection="true" type="object" runmode="Exclusive" preferredid="937ddf6e-daea-439a-8b5d-78bec21a6189">
+  <appdef>
+    <element name="Application Root">
+      <id>23b6e617-dd81-4dec-a36b-e28a7acb8b30</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>13</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="1511c0a8-cc9c-478f-8c9e-28525e21c878" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-21</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="131bbb72-5cae-4f32-9560-f413b764cd22" type="Normal" published="True">
+    <name>Upload Batch</name>
+    <view>
+      <camerax>-79</camerax>
+      <cameray>21</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="4b52e452-382f-4755-89be-ac251b511c3d" type="Normal" published="True">
+    <name>OCR Classify Extract</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>15</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="44ba5082-1524-4404-a7e1-9a6b3b6ae512" type="Normal" published="True">
+    <name>Get Batch Instances Status</name>
+    <view>
+      <camerax>-47</camerax>
+      <cameray>-157</cameray>
+      <zoom version="2">1.5625</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="6d059bda-1d45-4f04-b6d7-f7e58b0ee437" type="Normal" published="True">
+    <name>ConvertXMLtoBPObjects</name>
+    <view>
+      <camerax>15</camerax>
+      <cameray>477</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="36acc6d7-ea5f-462d-8785-5982d4203bda" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>72ded3a7-c8e3-4abe-ba4a-41ba2ed3cc5e</onsuccess>
+  </stage>
+  <stage stageid="72ded3a7-c8e3-4abe-ba4a-41ba2ed3cc5e" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="2de4d639-9fb3-4cbd-8959-49d6277e1f4c" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>System.Data.DataSetExtensions.dll</reference>
+      <reference>System.Net.Http.dll</reference>
+      <reference>System.Core.dll</reference>
+      <reference>System.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Net</import>
+      <import>System.ComponentModel</import>
+      <import>System.IO</import>
+      <import>System.Net.Http</import>
+      <import>System.Text</import>
+      <import>System.Threading.Tasks</import>
+      <import>System.Data</import>
+      <import>System.Net.Mime</import>
+      <import>System.Collections.Generic</import>
+      <import>System.Net.Http.Headers</import>
+      <import>System.Text.RegularExpressions</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="d8ca45be-9301-41e0-95ee-aae88df20f00" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>1511c0a8-cc9c-478f-8c9e-28525e21c878</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="a5521cc4-adf1-4eb6-a53c-7767331c9a47" name="Start" type="Start">
+    <subsheetid>1511c0a8-cc9c-478f-8c9e-28525e21c878</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7d4e694f-13e1-4a90-8c0d-43a88240f09c</onsuccess>
+  </stage>
+  <stage stageid="7d4e694f-13e1-4a90-8c0d-43a88240f09c" name="End" type="End">
+    <subsheetid>1511c0a8-cc9c-478f-8c9e-28525e21c878</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="6365645c-06f1-4cd2-8f31-156741e39e4b" name="Note1" type="Note">
+    <subsheetid>1511c0a8-cc9c-478f-8c9e-28525e21c878</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="99c435d6-456d-4f8e-a649-a1bf0df68944" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="592330d1-f43e-48f5-8732-ed8f7ffc3bb2" name="Get Batch Instances Status" type="SubSheetInfo">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>This is the Transact Web Service call that returns list of batch instances</narrative>
+    <displayx>-270</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="f40a03cf-3056-4ebc-bf3d-86fd16bab3e5" name="Start" type="Start">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="url" stage="url" />
+      <input type="text" name="username" stage="username" />
+      <input type="password" name="password" stage="password" />
+      <input type="text" name="batchInstanceID" narrative="The batch Instance ID to find out the status" stage="BatchInstanceID" />
+    </inputs>
+    <onsuccess>32e63c3f-84ae-4cf4-8035-cd1332087e0c</onsuccess>
+  </stage>
+  <stage stageid="7db914cc-788d-424b-81c6-c45133e2e28f" name="End" type="End">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="Batch Status" stage="batchStatus" />
+    </outputs>
+  </stage>
+  <stage stageid="d9938d0f-c705-4c2f-a130-67724f1fd1a3" name="password" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-135</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fe755716-e166-4300-8f12-9a0868e43b94" name="username" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-135</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a743e0a0-e1f1-4cb4-8d57-709efabdac5b" name="url" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>The URL of the Transact Server
+Example: http://localhost:8080</narrative>
+    <displayx>-135</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4fd5e37c-accd-4c9d-97fe-566ee076a151" name="Inputs" type="Block">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-180</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>210</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+  </stage>
+  <stage stageid="5c4179ed-23d4-4a55-8ef8-fbc1ac3d61bb" name="Response" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>This contains the XML response from the Ephesoft Transact Server</narrative>
+    <displayx>90</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8a2ec1b6-2307-4902-85a9-cd7f83a89c7c" name="Output" type="Block">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-285</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="b89706e5-015d-475b-911b-947916ee8336" name="Test/Debug" type="MultipleCalculation">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>This is the test inputs. Change values here to test</narrative>
+    <displayx>90</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>32e63c3f-84ae-4cf4-8035-cd1332087e0c</onsuccess>
+    <steps>
+      <calculation expression="&quot;http://seus-blue-001:8080&quot;" stage="url" />
+      <calculation expression="&quot;ephesoft&quot;" stage="username" />
+      <calculation expression="&quot;demo&quot;" stage="password" />
+      <calculation expression="&quot;BI1D4DA&quot;" stage="BatchInstanceID" />
+    </steps>
+  </stage>
+  <stage stageid="c8ab345e-211d-44c8-b668-de70bae125ae" name="Upload Batch" type="SubSheetInfo">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>This makes a call to the Upload Batch Web Service call</narrative>
+    <displayx>-300</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="17508722-34b0-4dd5-af87-13ffeefd8bdd" name="Start" type="Start">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="url" narrative="Ephesoft Transact Server URL" stage="url" />
+      <input type="text" name="username" narrative="Ephesoft Transact Username" stage="username" />
+      <input type="password" name="password" narrative="Ephesoft Transact Password" stage="password" />
+      <input type="text" name="BatchClassID" narrative="Transact Batch Class ID" stage="batchclassID" />
+      <input type="text" name="BatchName" narrative="Name of Batch Instance" stage="batchname" />
+      <input type="collection" name="FilePaths" narrative="Collection of File Paths PDF/Tif" stage="FilePaths" />
+    </inputs>
+    <onsuccess>83c33251-ccce-482e-9ec8-c68693714a5e</onsuccess>
+  </stage>
+  <stage stageid="dea0e7a6-e5e1-4649-9eb6-6f54cddd8d9f" name="End" type="End">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="BatchInstanceID" narrative="Batch Insatnce ID of the Upladed Batch" stage="BatchInstanceID" />
+    </outputs>
+  </stage>
+  <stage stageid="8416aff3-942a-4e02-ac55-0e634f6e1570" name="password" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>Password for the Authorized Transact User</narrative>
+    <displayx>-165</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e485e900-c403-46d1-a0d4-0beecca18927" name="username" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>Username of authorized Transact user</narrative>
+    <displayx>-165</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cccf317d-4d44-43b3-a2ed-be83c30e0e36" name="url" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>The URL of the Transact Server
+Example: http://localhost:8080</narrative>
+    <displayx>-120</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="40e97ffb-7cb2-4261-8ae0-9cc449ee99a9" name="Inputs" type="Block">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-210</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>165</displaywidth>
+    <displayheight>195</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+  </stage>
+  <stage stageid="83c33251-ccce-482e-9ec8-c68693714a5e" name="Create URL" type="Calculation">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>This stage bulds the complete URL for the restful Transact web service call</narrative>
+    <displayx>15</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>2d324614-970c-48d4-bcad-d86b58b0486e</onsuccess>
+    <calculation expression="[url] &amp; &quot;/dcma/rest/uploadBatch/&quot; &amp; [batchclassID] &amp; &quot;/&quot; &amp; [batchname]" stage="url" />
+  </stage>
+  <stage stageid="2da027aa-6e58-44bd-b372-d3060218aa54" name="Response" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>The contains the response returned from the Web Service call</narrative>
+    <displayx>105</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="25bab914-5a8e-426d-9e64-27a5c54ff9d6" name="Output" type="Block">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-315</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="1ecba40f-7c04-4e6f-aa1d-2e004f62742b" name="Test/Debug" type="MultipleCalculation">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>This is a debug/test stage for testing out the VBO locally in Object Studio. Inputs should be adjusted/modified here</narrative>
+    <displayx>105</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>83c33251-ccce-482e-9ec8-c68693714a5e</onsuccess>
+    <steps>
+      <calculation expression="&quot;http://seus-blue-001:8080&quot;" stage="url" />
+      <calculation expression="&quot;ephesoft&quot;" stage="username" />
+      <calculation expression="&quot;demo&quot;" stage="password" />
+      <calculation expression="&quot;BC5&quot;" stage="batchclassID" />
+      <calculation expression="&quot;MyTestBatchTest234&quot;" stage="batchname" />
+    </steps>
+  </stage>
+  <stage stageid="769a7cbe-514e-4ecd-8e0c-0a3193b60144" name="batchclassID" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>The Batch Class identifier for Transact
+Example: BC5</narrative>
+    <displayx>-90</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5b2dc7ce-dd08-480c-b56f-a3239a2ad395" name="batchname" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>The name of the Batch Instance for Transact
+Example: MyTestBatch1</narrative>
+    <displayx>-90</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2d324614-970c-48d4-bcad-d86b58b0486e" name="Make Upload Batch Web Service Call" type="Code">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>This stage makes the actuall HTTP POST request call via c# code</narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="workUrl" expr="[url]" />
+      <input type="text" name="username" expr="[username]" />
+      <input type="password" name="password" expr="[password]" />
+      <input type="collection" name="filePaths" expr="[FilePaths]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="response" stage="Response" />
+    </outputs>
+    <onsuccess>36cb3a50-f3bc-4630-80bc-01ebb42250f8</onsuccess>
+    <code><![CDATA[String credsencoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+
+MultipartFormDataContent formData = new MultipartFormDataContent();
+
+foreach (DataRow r in filePaths.Rows) {
+	String fP = (String)r[0];
+	StreamContent fileContent = new StreamContent(new FileStream(fP, FileMode.Open, FileAccess.Read));
+	fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
+	String fileName = fP.Substring(fP.LastIndexOf('\\') + 1);
+formData.Add(fileContent, fileName, fileName);
+}
+
+HttpClient request = new HttpClient();
+request.DefaultRequestHeaders.Add("Authorization", "Basic " + credsencoded);
+Task<HttpResponseMessage> t = request.PostAsync(workUrl, formData);
+
+response = t.GetAwaiter().GetResult().Content.ReadAsStringAsync().Result;
+]]></code>
+  </stage>
+  <stage stageid="c6ecd2c3-703a-486b-b9e7-9957cd04fd9d" name="FilePaths" type="Collection">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>This is a collection of file paths that are to be uploaded to the Ephesoft Batch Process. The images should be accessible by the robot. PDF and Tiff Images are supported</narrative>
+    <displayx>-165</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Path" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="7ff23378-5df6-4a4b-b355-f291792db4d3" name="Main Code" type="Block">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>375</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="94057e42-f96d-4bb6-a826-b95acf95f45d" name="Main Code Block" type="Block">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>This is the section that makes the actual web service call</narrative>
+    <displayx>-45</displayx>
+    <displayy>15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="5fd2c681-7210-4fdc-8926-707e6af8ce50" name="OCR Classify Extract" type="SubSheetInfo">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>This makes a call to the Upload Batch Web Service call</narrative>
+    <displayx>-300</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="4617a405-94f1-4a29-bc2f-0c41c457d44f" name="Start" type="Start">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="url" narrative="Ephesoft Transact Server URL" stage="url" />
+      <input type="text" name="username" narrative="Ephesoft Transact Username" stage="username" />
+      <input type="password" name="password" narrative="Ephesoft Transact Password" stage="password" />
+      <input type="text" name="BatchClassID" narrative="Transact Batch Class ID" stage="batchclassID" />
+      <input type="text" name="FilePath" narrative="Path to PDF/TIF Files" stage="filepath" />
+      <input type="text" name="docType" narrative="Force DocType To Transact" stage="docType" />
+    </inputs>
+    <onsuccess>60c653d5-5702-4365-bf83-64be23cbae03</onsuccess>
+  </stage>
+  <stage stageid="317df848-06e8-4579-9534-e348e8f47870" name="End" type="End">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="Response" narrative="Response XML from Ephesoft" stage="Response" />
+    </outputs>
+  </stage>
+  <stage stageid="73ec8df0-b527-4018-beec-3aa36e4a6b0b" name="password" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>Password for the Authorized Transact User</narrative>
+    <displayx>-165</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>
+    </initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ba0e80e9-f6a3-471c-bab6-6a5764f41560" name="username" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>Username of authorized Transact user</narrative>
+    <displayx>-165</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="49234423-f5c0-4ddf-918b-3e2d01fdda70" name="url" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>The URL of the Transact Server
+Example: http://localhost:8080</narrative>
+    <displayx>-165</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5c86d298-2775-42c8-a8d4-4f98d531c650" name="Inputs" type="Block">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-210</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>165</displaywidth>
+    <displayheight>150</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+  </stage>
+  <stage stageid="60c653d5-5702-4365-bf83-64be23cbae03" name="Create URL" type="Calculation">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>This stage bulds the complete URL for the restful Transact web service call</narrative>
+    <displayx>15</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>c2fdf375-06d4-4eef-8b11-a0804ab14054</onsuccess>
+    <calculation expression="[url] &amp; &quot;/dcma/rest/ocrClassifyExtract&quot;" stage="url" />
+  </stage>
+  <stage stageid="18ea2b36-d2a4-4011-b9f1-803c93314846" name="Response" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>The contains the response returned from the Web Service call</narrative>
+    <displayx>-300</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4cdce867-49ba-4d86-a477-2b36e9502b12" name="Output" type="Block">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-375</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="a169a405-90d3-4d84-8668-c409600e2845" name="Test/Debug" type="MultipleCalculation">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>This is a debug/test stage for testing out the VBO locally in Object Studio. Inputs should be adjusted/modified here</narrative>
+    <displayx>135</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>60c653d5-5702-4365-bf83-64be23cbae03</onsuccess>
+    <steps>
+      <calculation expression="&quot;https://quickscreen.demoephesoft.com&quot;" stage="url" />
+      <calculation expression="&quot;jerry.wallis@blueprism.com&quot;" stage="username" />
+      <calculation expression="&quot;Q4RzREnaQ69pGUb&quot;" stage="password" />
+      <calculation expression="&quot;BC6&quot;" stage="batchclassID" />
+      <calculation expression="&quot;C:\Users\ephesoft\Desktop\UK Sample ID.tif&quot;" stage="filepath" />
+      <calculation expression="&quot;UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_DRVLIC&quot;" stage="docType" />
+    </steps>
+  </stage>
+  <stage stageid="8237130e-54b4-4f67-98ec-9be452609dbd" name="filepath" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>The filepath of the images to ingest PDF is supported</narrative>
+    <displayx>-90</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f0e1a382-1ec7-4dd4-bd7e-d090adb7f8db" name="batchclassID" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>The Batch Class identifier for Transact
+Example: BC5</narrative>
+    <displayx>-90</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c2fdf375-06d4-4eef-8b11-a0804ab14054" name="Make OCRClassifyExtract Call" type="Code">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>This stage makes the actuall HTTP POST request call via c# code</narrative>
+    <displayx>15</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="workUrl" expr="[url]" />
+      <input type="text" name="username" expr="[username]" />
+      <input type="password" name="password" expr="[password]" />
+      <input type="text" name="path" expr="[filepath]" />
+      <input type="text" name="batchclassID" expr="[batchclassID]" />
+      <input type="text" name="DocType" expr="[docType]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="response" stage="Response" />
+    </outputs>
+    <onsuccess>317df848-06e8-4579-9534-e348e8f47870</onsuccess>
+    <code><![CDATA[HttpClient request = new HttpClient();
+
+String credsencoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+
+request.DefaultRequestHeaders.Add("Authorization", "Basic " + credsencoded);
+
+MultipartFormDataContent formData = new MultipartFormDataContent();
+//File for testing
+String fP = path;
+StreamContent fileContent = new StreamContent(new FileStream(fP, FileMode.Open, FileAccess.Read));
+fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
+String fileName = fP.Substring(fP.LastIndexOf('\\') + 1);
+formData.Add(fileContent, fileName, fileName);
+
+
+String batchClassIdentifier ="batchClassIdentifier";
+formData.Add(new MultipartFormDataContent());
+formData.Add(new StringContent(batchclassID), batchClassIdentifier);
+
+String docType = "docType";
+formData.Add(new MultipartFormDataContent());
+formData.Add(new StringContent(DocType), docType);
+
+Task<HttpResponseMessage> t = request.PostAsync(workUrl, formData);
+
+response = t.GetAwaiter().GetResult().Content.ReadAsStringAsync().Result;
+]]></code>
+  </stage>
+  <stage stageid="66284b83-207f-431f-88df-d12200e50d8b" name="Main Code" type="Block">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>270</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="0fb89e5d-49ea-4f7c-91a0-f2d5f59c3a38" name="batchStatus" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>This is the status of the batch you wish to pull. The following are batch status that can be used.
+NEW
+READY
+RUNNING
+READY_FOR_REVIEW
+READY_FOR_VALIDATION
+ERROR
+FINISHED
+DELETED
+RESTARTED
+RESTART_IN_PROGRESS
+CREATED
+TRANSFERRED
+REMOTE
+SHARED_FOLDER_ERROR
+LICENSE_ERROR</narrative>
+    <displayx>-240</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="548357d8-9a4e-4428-9322-edc7538e3ab0" name="Get Batch Instance List" type="Code">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>This stage makes the actuall HTTP POST request call via c# code</narrative>
+    <displayx>0</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="workUrl" expr="[workingurl]" />
+      <input type="text" name="username" expr="[username]" />
+      <input type="password" name="password" expr="[password]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Response" stage="Response" />
+    </outputs>
+    <onsuccess>2dde1282-9c80-47e9-a626-48511346cd2e</onsuccess>
+    <code><![CDATA[HttpClient request = new HttpClient();
+
+String credsencoded = System.Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
+
+request.DefaultRequestHeaders.Add("Authorization", "Basic " + credsencoded);
+
+Task<HttpResponseMessage> t = request.GetAsync(workUrl);
+
+Response = t.GetAwaiter().GetResult().Content.ReadAsStringAsync().Result;
+]]></code>
+  </stage>
+  <stage stageid="de38c3ac-801a-41dd-8c04-63894b1a373a" name="Create URL" type="Calculation">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>This stage bulds the complete URL for the restful Transact web service call</narrative>
+    <displayx>0</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>548357d8-9a4e-4428-9322-edc7538e3ab0</onsuccess>
+    <calculation expression="[url] &amp; &quot;/dcma/rest/BatchInstanceList/&quot; &amp; [BatchStatusToCheck.Status]" stage="workingurl" />
+  </stage>
+  <stage stageid="2dde1282-9c80-47e9-a626-48511346cd2e" name="load batch Instance List into collection" type="Action">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[Response]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;BatchInstance&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="BatchInstanceList" />
+    </outputs>
+    <onsuccess>0c4ad7ea-3b01-4943-8d03-1c9783c44046</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="91bfb612-9898-430d-ae09-b9aa904cfe91" name="BatchInstanceList" type="Collection">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="36cb3a50-f3bc-4630-80bc-01ebb42250f8" name="Load Batch Instance ID into var" type="Action">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[Response]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;ID&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="BatchInstanceIDCollection" />
+    </outputs>
+    <onsuccess>69ec1740-b759-4567-af3f-912fe8ade765</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="a47037e9-2f3e-426a-8ece-6b36666e45bf" name="BatchInstanceIDCollection" type="Collection">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="87d7344b-7b99-4a27-b741-e09dac23d192" name="BatchInstanceID" type="Data">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>This is the internal Ephesoft Batch Class ID</narrative>
+    <displayx>-270</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="69ec1740-b759-4567-af3f-912fe8ade765" name="load from collection into Var" type="Action">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[BatchInstanceIDCollection]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="BatchInstanceID" />
+    </outputs>
+    <onsuccess>500aacc8-c45f-4282-9de9-52d30a542460</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="500aacc8-c45f-4282-9de9-52d30a542460" name="strip xml tags" type="Code">
+    <subsheetid>131bbb72-5cae-4f32-9560-f413b764cd22</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="xmlInput" expr="[BatchInstanceID]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="StripedText" stage="BatchInstanceID" />
+    </outputs>
+    <onsuccess>dea0e7a6-e5e1-4649-9eb6-6f54cddd8d9f</onsuccess>
+    <code><![CDATA[StripedText = Regex.Replace(xmlInput, "<(.|\\n)*?>", string.Empty);
+]]></code>
+  </stage>
+  <stage stageid="9ce7f367-19b7-4850-9ba5-7ba9f2e78860" name="BatchInstanceID" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-135</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="32e63c3f-84ae-4cf4-8035-cd1332087e0c" name="LoopBatchInstanceStatus" type="LoopStart">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7a3f9ae5-474e-4542-b664-045ff272630f</onsuccess>
+    <groupid>2fdffc15-0cd5-42a0-bef3-acbe5d098359</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>BatchStatusToCheck</loopdata>
+  </stage>
+  <stage stageid="3f97b465-4fd2-466e-aa16-011dcc6bec4a" name="LoopBatchInstanceStatus" type="LoopEnd">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>300</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>99388200-8402-4708-9606-e6b88dab40f5</onsuccess>
+    <groupid>2fdffc15-0cd5-42a0-bef3-acbe5d098359</groupid>
+  </stage>
+  <stage stageid="bee5b506-e569-47af-bf3c-7bd1b403e37c" name="BatchStatusToCheck" type="Collection">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Status" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Status" type="text" value="READY_FOR_REVIEW" />
+      </row>
+      <row>
+        <field name="Status" type="text" value="READY_FOR_VALIDATION" />
+      </row>
+      <row>
+        <field name="Status" type="text" value="FINISHED" />
+      </row>
+      <row>
+        <field name="Status" type="text" value="ERROR" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="efbb8155-e0f6-4bb2-a0b8-286732138a79" name="isBatchFound" type="Decision">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[BatchFound]" />
+    <ontrue>7db914cc-788d-424b-81c6-c45133e2e28f</ontrue>
+    <onfalse>8db6692d-4b13-408f-9956-36161a1dbf1a</onfalse>
+  </stage>
+  <stage stageid="de35929c-23e4-4da2-95aa-f0c1f792ace4" name="BatchFound" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0c4ad7ea-3b01-4943-8d03-1c9783c44046" name="Check If batch Is presnet" type="Code">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="TextToMatch" expr="[Response]" />
+      <input type="text" name="RegexText" expr="[BatchInstanceID]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="matched" stage="BatchFound" />
+    </outputs>
+    <onsuccess>efbb8155-e0f6-4bb2-a0b8-286732138a79</onsuccess>
+    <code><![CDATA[matched = Regex.IsMatch(TextToMatch, RegexText);]]></code>
+  </stage>
+  <stage stageid="3bb7a564-1230-46bb-94a1-6032921476ad" name="workingurl" type="Data">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8db6692d-4b13-408f-9956-36161a1dbf1a" name="clear out BatchInstance List collection" type="Action">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;BatchInstanceList&quot;" />
+    </inputs>
+    <onsuccess>3f97b465-4fd2-466e-aa16-011dcc6bec4a</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Remove All Rows" />
+  </stage>
+  <stage stageid="7a3f9ae5-474e-4542-b664-045ff272630f" name="assignStatus" type="Calculation">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>de38c3ac-801a-41dd-8c04-63894b1a373a</onsuccess>
+    <calculation expression="[BatchStatusToCheck.Status]" stage="batchStatus" />
+  </stage>
+  <stage stageid="ecae3048-c3fa-4058-8a3d-4a456bea5afc" name="Time Out1" type="WaitEnd">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>300</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>dd7c8580-981b-491d-a37d-757a362da832</onsuccess>
+    <groupid>df83e3f2-5c22-44d5-b19a-2daa9cf60c04</groupid>
+  </stage>
+  <stage stageid="99388200-8402-4708-9606-e6b88dab40f5" name="Wait1" type="WaitStart">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-15</displayx>
+    <displayy>300</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <groupid>df83e3f2-5c22-44d5-b19a-2daa9cf60c04</groupid>
+    <choices />
+    <timeout>5</timeout>
+  </stage>
+  <stage stageid="dd7c8580-981b-491d-a37d-757a362da832" name="Anchor1" type="Anchor">
+    <subsheetid>44ba5082-1524-4404-a7e1-9a6b3b6ae512</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>32e63c3f-84ae-4cf4-8035-cd1332087e0c</onsuccess>
+  </stage>
+  <stage stageid="08eddf54-01d8-474e-b0fc-8b857dcb610d" name="ConvertXMLtoBPObjects" type="SubSheetInfo">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="3efda6bb-ddca-40a8-ac05-6a0010976b3d" name="Start" type="Start">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="EphesoftXML" stage="XML Response" />
+    </inputs>
+    <onsuccess>70f2bcc7-7102-4724-b15b-1c5ed39e5e93</onsuccess>
+  </stage>
+  <stage stageid="9aaed284-19f4-4ee2-ba29-1094c54b7649" name="End" type="End">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>570</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="collection" name="Ephesoft Objects" stage="Document Level Fields Collection" />
+    </outputs>
+  </stage>
+  <stage stageid="70f2bcc7-7102-4724-b15b-1c5ed39e5e93" name="Parse Exphesoft Response" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[XML Response]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;Document&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="Documents" />
+    </outputs>
+    <onsuccess>2d3ca10a-c055-43c8-9892-e2a53f57bbb7</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="b52d0b87-cc8e-4f09-a06f-c1084ef3a3a2" name="Documents" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="XML" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="2d3ca10a-c055-43c8-9892-e2a53f57bbb7" name="DocumentLoop" type="LoopStart">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-285</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>e00c9c57-7fea-4fdd-a43b-cc8afd02a00d</onsuccess>
+    <groupid>20cceac2-17eb-43e6-ae85-dd571285993f</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Documents</loopdata>
+  </stage>
+  <stage stageid="793f418b-dfb4-4100-8ac5-4f2f23517c8a" name="DocumentLoop" type="LoopEnd">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>525</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9aaed284-19f4-4ee2-ba29-1094c54b7649</onsuccess>
+    <groupid>20cceac2-17eb-43e6-ae85-dd571285993f</groupid>
+  </stage>
+  <stage stageid="e00c9c57-7fea-4fdd-a43b-cc8afd02a00d" name="Get Documents" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[DocumentloopIndex]" />
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[Documents]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="CurrentDocument" />
+    </outputs>
+    <onsuccess>030a6e90-28dd-4755-a475-531c55832849</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="a2354d83-4e8e-44a0-a5be-6520363d1a7b" name="CurrentDocument" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1a2aea84-391c-4b69-a7d2-90c04756049b" name="DocumentloopIndex" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-285</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0ba3fd57-d7c5-436e-ad24-c0395bd222d4" name="+1 DocumentloopIndex" type="Calculation">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>480</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>793f418b-dfb4-4100-8ac5-4f2f23517c8a</onsuccess>
+    <calculation expression="[DocumentloopIndex] + 1" stage="DocumentloopIndex" />
+  </stage>
+  <stage stageid="dde585cd-4f63-491c-bb78-802333f58fa9" name="Document Level FIelds Loop" type="LoopStart">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9c7ae6b6-1295-47df-aaaf-754d04745ea0</onsuccess>
+    <groupid>ae375d88-b68b-4b7f-9347-ae2214783da0</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>DocumentLevelFields</loopdata>
+  </stage>
+  <stage stageid="21ee0aa2-833f-4e39-b6a6-779a22d7ce3f" name="Document Level FIelds Loop" type="LoopEnd">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>435</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>0ba3fd57-d7c5-436e-ad24-c0395bd222d4</onsuccess>
+    <groupid>ae375d88-b68b-4b7f-9347-ae2214783da0</groupid>
+  </stage>
+  <stage stageid="321466bf-45eb-4166-9df1-d8c863908209" name="Get DocumentLevelFields" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[DLFLoopIndex]" />
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[DocumentLevelFields]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="currentDocumentLevelField" />
+    </outputs>
+    <onsuccess>d33c4f08-e749-4c69-aa94-08c1f18bdf9b</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="cc78a3f5-08da-476e-aeec-674633ed0c64" name="DLFLoopIndex" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bbe61c5d-2640-49a1-a91a-464e68b77d9f" name="+1 DocumentloopIndex" type="Calculation">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>390</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>21ee0aa2-833f-4e39-b6a6-779a22d7ce3f</onsuccess>
+    <calculation expression="[DLFLoopIndex] + 1" stage="DLFLoopIndex" />
+  </stage>
+  <stage stageid="54b555d8-ba61-44eb-bf86-272a91b21efd" name="Parse DocumentLevelFields" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[CurrentDocument]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;DocumentLevelField&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="DocumentLevelFields" />
+    </outputs>
+    <onsuccess>ca61a4e4-d377-47da-a969-d83c1b06a318</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="1d1061fc-e48e-431b-896a-869feea928fb" name="DocumentLevelFields" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="XML" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="081a083e-a8c8-4bf0-9c79-8250f8dd078a" name="currentDocumentLevelField" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d33c4f08-e749-4c69-aa94-08c1f18bdf9b" name="getFieldName" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>210</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[currentDocumentLevelField]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;Name&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="FieldName" />
+    </outputs>
+    <onsuccess>85c8bc4a-d209-4611-9a87-944e8881bf4b</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="35038754-6044-4430-87db-184edb3f48c7" name="FieldName" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>210</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e01fc2f2-1a8a-4e36-a163-c5f435f4482e" name="checkifDLFsArePresent" type="Decision">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>60</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[AreDLFsPresent]" />
+    <ontrue>dde585cd-4f63-491c-bb78-802333f58fa9</ontrue>
+    <onfalse>0ba3fd57-d7c5-436e-ad24-c0395bd222d4</onfalse>
+  </stage>
+  <stage stageid="ca61a4e4-d377-47da-a969-d83c1b06a318" name="Check if DLF are Present" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;DocumentLevelFields&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="documentLevelFieldsCount" />
+    </outputs>
+    <onsuccess>e01fc2f2-1a8a-4e36-a163-c5f435f4482e</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="1e2634c6-a26f-4f9e-9d0d-7e3eeda5cd5b" name="AreDLFsPresent" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>True</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="85c8bc4a-d209-4611-9a87-944e8881bf4b" name="GetDLFName" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[FieldName]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="DLFName" />
+    </outputs>
+    <onsuccess>c48c13a3-7fdc-4199-851d-05a04f3710f8</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="1adecd09-b904-490b-8654-0dec9b9ddabe" name="GetDLFValue" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>345</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[FieldName]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="DLF Value" />
+    </outputs>
+    <onsuccess>dc63bd13-9d18-4fce-84d1-50611f4ac54b</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="9f4de4cd-3013-4062-8b20-7183174092da" name="getFieldValue" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>300</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[currentDocumentLevelField]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="FieldName" />
+    </outputs>
+    <onsuccess>1adecd09-b904-490b-8654-0dec9b9ddabe</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="030a6e90-28dd-4755-a475-531c55832849" name="getDocID" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[CurrentDocument]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;Identifier&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="DocumentID" />
+    </outputs>
+    <onsuccess>03100647-2638-4c82-90a9-01050bdbecf8</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="de5b1046-1484-47de-bf11-86fdd05c1ecb" name="DocumentID" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="946b8953-d38c-4990-aa71-b362ad19b1f9" name="GetDocIDFromCollection" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[DocumentID]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="DocID" />
+    </outputs>
+    <onsuccess>8261b863-a3e1-45bb-af1b-c2cb06386e04</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="03100647-2638-4c82-90a9-01050bdbecf8" name="add row to collection" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Document Level Fields Collection&quot;" />
+    </inputs>
+    <onsuccess>946b8953-d38c-4990-aa71-b362ad19b1f9</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="f0471379-51bb-4091-a5e4-76bdbe3df61e" name="Document Level Fields Collection" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>This action will take the ephesoft batch xml response and convert commonly use data into a BP Collection for used in the workflow</narrative>
+    <displayx>-225</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="DocID" type="text" description="This is the document ID" />
+      <field name="DocType" type="text" description="This is the document type" />
+      <field name="Name" type="text" description="If Present a document level field name" />
+      <field name="Value" type="text" description="If Presen document Level Field value" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="106dffec-79af-41a2-b3e7-af00f120969f" name="Inputs" type="Block">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-165</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="00FF00" />
+  </stage>
+  <stage stageid="bac5d04a-ee53-4d79-b556-daba6cab2736" name="Output" type="Block">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-270</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF00" />
+  </stage>
+  <stage stageid="b0fa8536-515b-4594-99f7-d99dfed0e70b" name="XML Response" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>This is the XML data from Ephesoft</narrative>
+    <displayx>-120</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;Batch&gt;&lt;BatchInstanceIdentifier&gt;BI2711C&lt;/BatchInstanceIdentifier&gt;&lt;BatchClassIdentifier&gt;BC2717&lt;/BatchClassIdentifier&gt;&lt;BatchClassName&gt;SF86_2008&lt;/BatchClassName&gt;&lt;BatchClassDescription&gt;Security Documents&lt;/BatchClassDescription&gt;&lt;BatchClassVersion&gt;1.0.0.416&lt;/BatchClassVersion&gt;&lt;BatchName&gt;ee59db3b-aadc-41cb-b721-de291231cb20&lt;/BatchName&gt;&lt;BatchDescription&gt;ee59db3b-aadc-41cb-b721-de291231cb20&lt;/BatchDescription&gt;&lt;BatchPriority&gt;1&lt;/BatchPriority&gt;&lt;BatchStatus&gt;FINISHED&lt;/BatchStatus&gt;&lt;BatchCreationDate&gt;2019-03-04 21:21:48.413&lt;/BatchCreationDate&gt;&lt;BatchLocalPath&gt;C:\Ephesoft\SharedFolders\ephesoft-system-folder&lt;/BatchLocalPath&gt;&lt;UNCFolderPath&gt;c:\Ephesoft\SharedFolders\WATCHFOLDER\SF86_2008\ee59db3b-aadc-41cb-b721-de291231cb20&lt;/UNCFolderPath&gt;&lt;BatchSource&gt;Web Service&lt;/BatchSource&gt;&lt;DocumentClassificationTypes&gt;&lt;DocumentClassificationType&gt;SearchClassification&lt;/DocumentClassificationType&gt;&lt;/DocumentClassificationTypes&gt;&lt;Documents&gt;&lt;Document&gt;&lt;Identifier&gt;DOC1&lt;/Identifier&gt;&lt;Type&gt;SF86-2008&lt;/Type&gt;&lt;Description&gt;SF86 2008&lt;/Description&gt;&lt;Confidence&gt;51.18&lt;/Confidence&gt;&lt;ConfidenceThreshold&gt;10.0&lt;/ConfidenceThreshold&gt;&lt;Valid&gt;true&lt;/Valid&gt;&lt;Reviewed&gt;true&lt;/Reviewed&gt;&lt;ErrorMessage&gt;&lt;/ErrorMessage&gt;&lt;DocumentDisplayInfo&gt;&lt;/DocumentDisplayInfo&gt;&lt;DocumentLevelFields&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;SexCheckBoxes&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;121&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox22aYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;406&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox22bYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;411&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox22cYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;416&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox22dYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;421&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox22eYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;426&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox23aYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;441&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox23bYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;446&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox23cYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;451&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox23dYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;456&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox24aYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;471&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox24bYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;476&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox24cYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;481&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26aYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;511&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26bYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;521&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26cYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;531&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26dYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;541&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26eYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;551&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26fYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;561&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26gYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;571&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26hYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;581&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26iYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;591&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26jYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;601&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26kYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;611&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26lYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;621&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26mYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;631&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26nYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;641&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26oYesNo&lt;/Name&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;01&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;651&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;CheckBox26pYesNo&lt;/Name&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;10&lt;/Value&gt;&lt;x0&gt;0&lt;/x0&gt;&lt;y0&gt;0&lt;/y0&gt;&lt;x1&gt;0&lt;/x1&gt;&lt;y1&gt;0&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;661&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;01_field_finder&lt;/Name&gt;&lt;Value&gt;1 FULL NAME&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;43.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;1 FULL NAME&lt;/Value&gt;&lt;x0&gt;97&lt;/x0&gt;&lt;y0&gt;1579&lt;/y0&gt;&lt;x1&gt;324&lt;/x1&gt;&lt;y1&gt;1603&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;10&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;01_last_name&lt;/Name&gt;&lt;Value&gt;Morris&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Morris&lt;/Value&gt;&lt;x0&gt;117&lt;/x0&gt;&lt;y0&gt;1729&lt;/y0&gt;&lt;x1&gt;227&lt;/x1&gt;&lt;y1&gt;1759&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;20&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;01_first_name&lt;/Name&gt;&lt;Value&gt;Brian&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;15.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Brian&lt;/Value&gt;&lt;x0&gt;827&lt;/x0&gt;&lt;y0&gt;1733&lt;/y0&gt;&lt;x1&gt;918&lt;/x1&gt;&lt;y1&gt;1763&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;30&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;01_middle_name&lt;/Name&gt;&lt;Value&gt;Johnny&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Johnny&lt;/Value&gt;&lt;x0&gt;1488&lt;/x0&gt;&lt;y0&gt;1725&lt;/y0&gt;&lt;x1&gt;1619&lt;/x1&gt;&lt;y1&gt;1763&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;40&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;02_dob&lt;/Name&gt;&lt;Value&gt;07/01/1973&lt;/Value&gt;&lt;Type&gt;DATE&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;07/01/1973&lt;/Value&gt;&lt;x0&gt;2070&lt;/x0&gt;&lt;y0&gt;1630&lt;/y0&gt;&lt;x1&gt;2254&lt;/x1&gt;&lt;y1&gt;1657&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;50&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;03_field_finder&lt;/Name&gt;&lt;Value&gt;County&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;88.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;County&lt;/Value&gt;&lt;x0&gt;744&lt;/x0&gt;&lt;y0&gt;1838&lt;/y0&gt;&lt;x1&gt;846&lt;/x1&gt;&lt;y1&gt;1867&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;59&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;03_pob_city&lt;/Name&gt;&lt;Value&gt;Columbus&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Columbus&lt;/Value&gt;&lt;x0&gt;117&lt;/x0&gt;&lt;y0&gt;1888&lt;/y0&gt;&lt;x1&gt;301&lt;/x1&gt;&lt;y1&gt;1918&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;60&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;03_pob_state&lt;/Name&gt;&lt;Value&gt;OH&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;15.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;OH&lt;/Value&gt;&lt;x0&gt;1259&lt;/x0&gt;&lt;y0&gt;1865&lt;/y0&gt;&lt;x1&gt;1317&lt;/x1&gt;&lt;y1&gt;1938&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;71&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;03_pob_country&lt;/Name&gt;&lt;Value&gt;US&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;15.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;US&lt;/Value&gt;&lt;x0&gt;1412&lt;/x0&gt;&lt;y0&gt;1888&lt;/y0&gt;&lt;x1&gt;1465&lt;/x1&gt;&lt;y1&gt;1918&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;80&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;04_ssn&lt;/Name&gt;&lt;Value&gt;293-98-1553&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;293-98-1553&lt;/Value&gt;&lt;x0&gt;2149&lt;/x0&gt;&lt;y0&gt;1892&lt;/y0&gt;&lt;x1&gt;2382&lt;/x1&gt;&lt;y1&gt;1922&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;90&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;06_field_finder&lt;/Name&gt;&lt;Value&gt;First name&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;First name&lt;/Value&gt;&lt;x0&gt;998&lt;/x0&gt;&lt;y0&gt;2534&lt;/y0&gt;&lt;x1&gt;1152&lt;/x1&gt;&lt;y1&gt;2559&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;99&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;06_mother_first_name&lt;/Name&gt;&lt;Value&gt;Denise&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Denise&lt;/Value&gt;&lt;x0&gt;1024&lt;/x0&gt;&lt;y0&gt;2583&lt;/y0&gt;&lt;x1&gt;1148&lt;/x1&gt;&lt;y1&gt;2613&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;100&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;06_mother_maiden_name&lt;/Name&gt;&lt;Value&gt;Bryant&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Bryant&lt;/Value&gt;&lt;x0&gt;129&lt;/x0&gt;&lt;y0&gt;2584&lt;/y0&gt;&lt;x1&gt;246&lt;/x1&gt;&lt;y1&gt;2621&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;110&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;07_sex&lt;/Name&gt;&lt;Value&gt;Male&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;15.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Female&lt;/Value&gt;&lt;x0&gt;1425&lt;/x0&gt;&lt;y0&gt;2698&lt;/y0&gt;&lt;x1&gt;1533&lt;/x1&gt;&lt;y1&gt;2722&lt;/y1&gt;&lt;/Coordinates&gt;&lt;Coordinates&gt;&lt;Value&gt;Male&lt;/Value&gt;&lt;x0&gt;1425&lt;/x0&gt;&lt;y0&gt;2745&lt;/y0&gt;&lt;x1&gt;1495&lt;/x1&gt;&lt;y1&gt;2768&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;120&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Female;Male&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;08_home_phone&lt;/Name&gt;&lt;Value&gt;614-528-4902&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;39.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;96.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;614-528-4902&lt;/Value&gt;&lt;x0&gt;176&lt;/x0&gt;&lt;y0&gt;2984&lt;/y0&gt;&lt;x1&gt;433&lt;/x1&gt;&lt;y1&gt;3014&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;130&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;08_mobile_phone&lt;/Name&gt;&lt;Value&gt;513-182-9175&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;40.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;89.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;513-182-9175&lt;/Value&gt;&lt;x0&gt;1685&lt;/x0&gt;&lt;y0&gt;2981&lt;/y0&gt;&lt;x1&gt;1940&lt;/x1&gt;&lt;y1&gt;3011&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG2&lt;/Page&gt;&lt;FieldOrderNumber&gt;140&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 01&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;11_field_finder&lt;/Name&gt;&lt;Value&gt;Period of Residence&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Period of Residence&lt;/Value&gt;&lt;x0&gt;934&lt;/x0&gt;&lt;y0&gt;2224&lt;/y0&gt;&lt;x1&gt;1250&lt;/x1&gt;&lt;y1&gt;2247&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG3&lt;/Page&gt;&lt;FieldOrderNumber&gt;219&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 02&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;11_residence_1_date&lt;/Name&gt;&lt;Value&gt;09/25/2015&lt;/Value&gt;&lt;Type&gt;DATE&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;60.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;93.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;09/25/2015&lt;/Value&gt;&lt;x0&gt;120&lt;/x0&gt;&lt;y0&gt;2297&lt;/y0&gt;&lt;x1&gt;325&lt;/x1&gt;&lt;y1&gt;2353&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG3&lt;/Page&gt;&lt;FieldOrderNumber&gt;220&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 02&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;11_residence_1_street_address&lt;/Name&gt;&lt;Value&gt;47 Fairview Alley&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;19.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;32.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;47 Fairview Allev&lt;/Value&gt;&lt;x0&gt;1443&lt;/x0&gt;&lt;y0&gt;2312&lt;/y0&gt;&lt;x1&gt;1755&lt;/x1&gt;&lt;y1&gt;2345&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG3&lt;/Page&gt;&lt;FieldOrderNumber&gt;230&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 02&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;11_residence_1_city&lt;/Name&gt;&lt;Value&gt;Roanoke&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;60.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;100.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Roanoke&lt;/Value&gt;&lt;x0&gt;121&lt;/x0&gt;&lt;y0&gt;2514&lt;/y0&gt;&lt;x1&gt;282&lt;/x1&gt;&lt;y1&gt;2544&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG3&lt;/Page&gt;&lt;FieldOrderNumber&gt;240&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 02&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;22a_criminal_proceeding&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;92.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; a. Have you been issued a summons, citation, or ticket to appear in court in a criminal proceeding against you; are you on trial or awaiting a trial on criminal charges; or are you currently awaiting sentencing for a criminal offense?&lt;/Value&gt;&lt;x0&gt;99&lt;/x0&gt;&lt;y0&gt;558&lt;/y0&gt;&lt;x1&gt;2170&lt;/x1&gt;&lt;y1&gt;628&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;405&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;22b_arrested&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;69.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;b. Have you been arrested by any police officer, sheriff, marshal, or any other type of law enforcement officer?&lt;/Value&gt;&lt;x0&gt;110&lt;/x0&gt;&lt;y0&gt;651&lt;/y0&gt;&lt;x1&gt;1739&lt;/x1&gt;&lt;y1&gt;681&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;410&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;22c_charged_felony&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;29.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;29.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;c Have you EVER been charged with any felony offense? (include those under Uniform Code of Military Justice.)&lt;/Value&gt;&lt;x0&gt;110&lt;/x0&gt;&lt;y0&gt;698&lt;/y0&gt;&lt;x1&gt;1787&lt;/x1&gt;&lt;y1&gt;728&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;415&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;22d_charged_firearms&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;97.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;d Have you EVER been charged with a firearms or explosives offense?&lt;/Value&gt;&lt;x0&gt;110&lt;/x0&gt;&lt;y0&gt;756&lt;/y0&gt;&lt;x1&gt;1166&lt;/x1&gt;&lt;y1&gt;786&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;420&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;22e_alcohol_drugs&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;70.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;e Have you EVER been charged with any offense(s) related to alcohol or drugs?&lt;/Value&gt;&lt;x0&gt;109&lt;/x0&gt;&lt;y0&gt;801&lt;/y0&gt;&lt;x1&gt;1300&lt;/x1&gt;&lt;y1&gt;831&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;425&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;23a_controlled_substance&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;56.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; a In the last 7 years, have you illegally used any controlled substance, for example, cocaine, crack cocaine, THC Onar#uana, hashish, etc.), narcoucs (opium, morphine, codeine, heroin, etc.), sumulants (amphetamines, speed, crystal methamphetamine, Ecstacy, ketamine, etc.), depressants (barbiturates, methaqualone, tranquilizers, etc), hallucinogenics (LSD, PCP, etc.), steroids, inhalants (toluene, amyl n/*ate, etc.) or prescription drugs (induding paink#/ers)? Use of a controlled substance includes injecting, snorting, inhaling, swallowing, experimenting with or otherwise consuming any controlled substance.&lt;/Value&gt;&lt;x0&gt;111&lt;/x0&gt;&lt;y0&gt;1493&lt;/y0&gt;&lt;x1&gt;2191&lt;/x1&gt;&lt;y1&gt;1684&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;440&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;23b_controlled_substance_w_clearance&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; b Have you EVER illegally used a controlled substance while possessing a security clearance; while employed as a law enforcement officer, prosecutor, or courtroom official; or while in a position directly and immediately affecting the public safety?&lt;/Value&gt;&lt;x0&gt;112&lt;/x0&gt;&lt;y0&gt;1701&lt;/y0&gt;&lt;x1&gt;2193&lt;/x1&gt;&lt;y1&gt;1771&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;445&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;23c_controlled_substance_possession&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;74.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; c In the last 7 years, have you been involved in the illegal possession, purchase, manufacture, trafficking, production, transfer, shipping, receiving, handling, or sale of any controlled substance (see ques#on a above) including prescription drugs?&lt;/Value&gt;&lt;x0&gt;112&lt;/x0&gt;&lt;y0&gt;1794&lt;/y0&gt;&lt;x1&gt;2131&lt;/x1&gt;&lt;y1&gt;1864&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;450&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;23d_counseling&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;89.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; d In the last 7 years, have you received counseling or treatment or have you been ordered, advised, or asked to seek counseling or treatment as a result of your use of drugs? If you answered "Yes," provide date(s) of treatment and name(s) and address(es) of provider(s). You will be asked to sign an additional release if information is needed concerning any treatment.&lt;/Value&gt;&lt;x0&gt;112&lt;/x0&gt;&lt;y0&gt;1887&lt;/y0&gt;&lt;x1&gt;2217&lt;/x1&gt;&lt;y1&gt;1996&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;455&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;24a_alcohol_impact&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;51.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt; a Has your use of alcohol had a negative impact on your work performance, your professional or personal relationships, your finances, or resulted in intervention by law enforcement/public safety personnel? (lf "Yes," explain.)&lt;/Value&gt;&lt;x0&gt;125&lt;/x0&gt;&lt;y0&gt;2461&lt;/y0&gt;&lt;x1&gt;2182&lt;/x1&gt;&lt;y1&gt;2528&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;470&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;24b_alcohol_counseling_ordered&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;b Have you been ordered, advised, or asked to seek counseling or treatment as a result of your use of alcohol?&lt;/Value&gt;&lt;x0&gt;126&lt;/x0&gt;&lt;y0&gt;2594&lt;/y0&gt;&lt;x1&gt;1801&lt;/x1&gt;&lt;y1&gt;2626&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;475&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;24c_alcohol_counseling_received&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;50.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;c Have you received counseling or treatment as a result of your use of alcohol?&lt;/Value&gt;&lt;x0&gt;126&lt;/x0&gt;&lt;y0&gt;2650&lt;/y0&gt;&lt;x1&gt;1334&lt;/x1&gt;&lt;y1&gt;2680&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG15&lt;/Page&gt;&lt;FieldOrderNumber&gt;480&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 14&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26_field_finder&lt;/Name&gt;&lt;Value&gt;ordinance?&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;77.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;ordinance?&lt;/Value&gt;&lt;x0&gt;1653&lt;/x0&gt;&lt;y0&gt;2077&lt;/y0&gt;&lt;x1&gt;1814&lt;/x1&gt;&lt;y1&gt;2101&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;500&lt;/FieldOrderNumber&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26a_bankruptcy&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;71.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;a Have you filed a petition under any chapter of the bankruptcy code? If "Yes," indicate type.&lt;/Value&gt;&lt;x0&gt;126&lt;/x0&gt;&lt;y0&gt;1931&lt;/y0&gt;&lt;x1&gt;1526&lt;/x1&gt;&lt;y1&gt;1961&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;510&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26b_foreclosed&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;b Have you had any possessions or property voluntarily or involuntarily repossessed or foreclosed?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2004&lt;/y0&gt;&lt;x1&gt;1623&lt;/x1&gt;&lt;y1&gt;2034&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;520&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26c_taxes&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;0.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;530&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Recostar Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26d_lien&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;d Have you had a lien placed against your property for failing to pay taxes or other debts?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2149&lt;/y0&gt;&lt;x1&gt;1481&lt;/x1&gt;&lt;y1&gt;2179&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;540&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26e_judgment&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;e Have you had a judgment entered against you?&lt;/Value&gt;&lt;x0&gt;126&lt;/x0&gt;&lt;y0&gt;2221&lt;/y0&gt;&lt;x1&gt;888&lt;/x1&gt;&lt;y1&gt;2251&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;550&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26f_defaulted_loan&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Have you defaulted on any type of loan?&lt;/Value&gt;&lt;x0&gt;193&lt;/x0&gt;&lt;y0&gt;2303&lt;/y0&gt;&lt;x1&gt;786&lt;/x1&gt;&lt;y1&gt;2332&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;560&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26g_collection_agency&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;g Have you had bills or debts turned over to a collection agency?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2378&lt;/y0&gt;&lt;x1&gt;1118&lt;/x1&gt;&lt;y1&gt;2408&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;570&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26h_credit_card&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;h Have you had any account or credit card suspended, charged off, or cancelled for failing to pay as agreed?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2449&lt;/y0&gt;&lt;x1&gt;1764&lt;/x1&gt;&lt;y1&gt;2479&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;580&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26i_evicted&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;30.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;37.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;1 Have you been evicted for non-payment of financial obligations?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2524&lt;/y0&gt;&lt;x1&gt;1135&lt;/x1&gt;&lt;y1&gt;2554&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;590&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26j_child_support&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;69.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;j Have you been delinquent on court-imposed alimony or child support payments?&lt;/Value&gt;&lt;x0&gt;123&lt;/x0&gt;&lt;y0&gt;2596&lt;/y0&gt;&lt;x1&gt;1375&lt;/x1&gt;&lt;y1&gt;2627&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;600&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26k_wages_garnished&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;k Have you had your wages, benefits, or assets gamished or attached for any reason?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2675&lt;/y0&gt;&lt;x1&gt;1435&lt;/x1&gt;&lt;y1&gt;2705&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;610&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26l_employee_credit_card&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;76.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;1 Have you been counseled, warned, or disciplined for violating terms of agreement for a travel or credit card provided by your employer?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2750&lt;/y0&gt;&lt;x1&gt;2183&lt;/x1&gt;&lt;y1&gt;2780&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;620&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26m_debt_180_days_delinquent&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;75.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;m Have you been over 180 days delinquent on any debt(s)?&lt;/Value&gt;&lt;x0&gt;124&lt;/x0&gt;&lt;y0&gt;2825&lt;/y0&gt;&lt;x1&gt;1034&lt;/x1&gt;&lt;y1&gt;2855&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;630&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26n_debt_90_days_delinquent&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;65.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;75.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;n Are you currently over 90 days delinquent on any debt(s)?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2900&lt;/y0&gt;&lt;x1&gt;1046&lt;/x1&gt;&lt;y1&gt;2930&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;640&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26o_gambling_problem&lt;/Name&gt;&lt;Value&gt;No&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;80.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;o Have you EVER experienced financial problems due to gambling?&lt;/Value&gt;&lt;x0&gt;127&lt;/x0&gt;&lt;y0&gt;2975&lt;/y0&gt;&lt;x1&gt;1164&lt;/x1&gt;&lt;y1&gt;3005&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;650&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;DocumentLevelField&gt;&lt;Name&gt;26p_delinquent_fed_debt&lt;/Name&gt;&lt;Value&gt;Yes&lt;/Value&gt;&lt;Type&gt;STRING&lt;/Type&gt;&lt;Confidence&gt;100.0&lt;/Confidence&gt;&lt;OcrConfidenceThreshold&gt;80.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;98.0&lt;/OcrConfidence&gt;&lt;CoordinatesList&gt;&lt;Coordinates&gt;&lt;Value&gt;Are you currently delinquent on any Federal debt?&lt;/Value&gt;&lt;x0&gt;191&lt;/x0&gt;&lt;y0&gt;3052&lt;/y0&gt;&lt;x1&gt;929&lt;/x1&gt;&lt;y1&gt;3082&lt;/y1&gt;&lt;/Coordinates&gt;&lt;/CoordinatesList&gt;&lt;Page&gt;PG16&lt;/Page&gt;&lt;FieldOrderNumber&gt;660&lt;/FieldOrderNumber&gt;&lt;FieldValueOptionList&gt;Yes;No&lt;/FieldValueOptionList&gt;&lt;FieldValueChangeScript&gt;false&lt;/FieldValueChangeScript&gt;&lt;ExtractionName&gt;Key Value Extraction&lt;/ExtractionName&gt;&lt;Category&gt;Page 15&lt;/Category&gt;&lt;/DocumentLevelField&gt;&lt;/DocumentLevelFields&gt;&lt;Pages&gt;&lt;Page&gt;&lt;Identifier&gt;PG0&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0001-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_0.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.42&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.42&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;9.684&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0002.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;5.44&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG0_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG0_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG0_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG0.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG1&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0002-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_1.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.563&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0002.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.563&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0002.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;8.94&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;6.096&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG1_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG1_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG1_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG1.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG2&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0003-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_2.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.139996&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0003.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.139996&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0003.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;4.6480002&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG2_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG2_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG2_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_2.tif&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG3&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0004-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_3.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;46.755&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0004.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;46.755&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0004.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;10.54&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG3_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG3_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG3_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG3.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG4&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0005-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_4.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.829998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0005.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.829998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0005.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG4_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG4_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG4_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG4.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG5&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0006-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_5.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.605&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0006.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.605&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0006.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG5_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG5_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG5_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG5.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG6&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0007-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_6.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.038998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0007.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.038998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0007.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;11.22&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG6_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG6_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG6_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG6.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG7&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0008-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_7.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.347&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0008.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.347&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0008.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;11.05&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG7_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG7_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG7_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG7.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG8&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0009-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_8.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.347&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0008.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;49.347&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0008.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;11.1&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG8_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG8_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG8_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG8.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG9&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0010-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_9.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.901997&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0010.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.901997&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0010.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;3.61&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG9_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG9_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG9_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG9.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG10&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0011-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_10.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.049&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0011.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.049&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0011.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;3.54&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG10_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG10_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG10_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG10.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG11&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0012-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_11.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.198997&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0012.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.198997&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0012.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;9.44&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;2.4160001&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG11_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG11_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG11_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG11.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG12&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0013-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_12.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.973&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0013.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.973&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0013.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;7.81&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;3.016&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG12_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG12_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG12_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG12.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG13&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0014-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_13.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.785&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0014.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;52.785&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0014.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;7.69&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG13_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG13_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG13_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG13.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG14&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0015-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_14.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.327995&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0015.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.327995&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0015.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;4.72&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;2.9680002&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG14_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG14_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG14_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG14.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG15&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0016-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_15.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.669&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0016.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.669&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0016.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;3.56&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG15_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG15_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG15_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_15.tif&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG16&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0017-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_16.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.372&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0017.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;51.372&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0017.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;8.65&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG16_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG16_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG16_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_16.tif&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG17&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0018-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_17.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;54.162&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0018.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;54.162&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0018.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;7.84&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG17_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG17_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG17_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG17.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG18&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0019-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_18.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.751&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0019.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;50.751&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0019.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;6.94&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;3.352&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG18_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG18_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG18_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG18.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG19&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0020-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_19.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.864998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0020.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;53.864998&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0020.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;24.216002&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;8.97&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG19_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG19_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG19_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG19.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;Page&gt;&lt;Identifier&gt;PG20&lt;/Identifier&gt;&lt;OldFileName&gt;SF86_293-98-1553-0021-0001.tif&lt;/OldFileName&gt;&lt;NewFileName&gt;BI2711C_20.tif&lt;/NewFileName&gt;&lt;PageLevelFields&gt;&lt;PageLevelField&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;47.624&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;OcrConfidenceThreshold&gt;0.0&lt;/OcrConfidenceThreshold&gt;&lt;OcrConfidence&gt;0.0&lt;/OcrConfidence&gt;&lt;FieldOrderNumber&gt;0&lt;/FieldOrderNumber&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;AlternateValues&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Last_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;47.624&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0021.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_Middle_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;17.883&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0020.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;AlternateValue&gt;&lt;Name&gt;Search_Engine_Classification&lt;/Name&gt;&lt;Value&gt;SF86-2008_First_Page&lt;/Value&gt;&lt;Type&gt;&lt;/Type&gt;&lt;Confidence&gt;5.08&lt;/Confidence&gt;&lt;LearnedFileName&gt;SF86_293-98-1553-0001.tif&lt;/LearnedFileName&gt;&lt;ForceReview&gt;false&lt;/ForceReview&gt;&lt;/AlternateValue&gt;&lt;/AlternateValues&gt;&lt;Category&gt;Group 1&lt;/Category&gt;&lt;widgetType&gt;TEXT&lt;/widgetType&gt;&lt;/PageLevelField&gt;&lt;/PageLevelFields&gt;&lt;HocrFileName&gt;BI2711C_PG20_HOCR.xml&lt;/HocrFileName&gt;&lt;ThumbnailFileName&gt;BI2711C_PG20_displayThumb.png&lt;/ThumbnailFileName&gt;&lt;DisplayFileName&gt;BI2711C_PG20_displayImage.png&lt;/DisplayFileName&gt;&lt;OCRInputFileName&gt;BI2711C_PG20.png&lt;/OCRInputFileName&gt;&lt;Direction&gt;NORTH&lt;/Direction&gt;&lt;IsRotated&gt;false&lt;/IsRotated&gt;&lt;/Page&gt;&lt;/Pages&gt;&lt;MultiPagePdfFile&gt;C:\Ephesoft\SharedFolders\final-drop-folder\BC2717\BI2711C\2019-03-05\BI2711C_DOC1.pdf&lt;/MultiPagePdfFile&gt;&lt;/Document&gt;&lt;/Documents&gt;&lt;/Batch&gt;</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c48c13a3-7fdc-4199-851d-05a04f3710f8" name="strip xml tags1" type="Code">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="xmlInput" expr="[DLFName]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="StripedText" stage="Document Level Fields Collection.Name" />
+    </outputs>
+    <onsuccess>9f4de4cd-3013-4062-8b20-7183174092da</onsuccess>
+    <code><![CDATA[StripedText = Regex.Replace(xmlInput, "<(.|\\n)*?>", string.Empty);
+]]></code>
+  </stage>
+  <stage stageid="075e3c98-8258-4464-bfcc-67f5d46f6bfa" name="DLFName" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="df5ac972-b70b-4128-ad37-01f5e14b4870" name="DLF Value" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>345</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="dc63bd13-9d18-4fce-84d1-50611f4ac54b" name="strip xml tags2" type="Code">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>345</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="xmlInput" expr="[DLF Value]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="StripedText" stage="Document Level Fields Collection.Value" />
+    </outputs>
+    <onsuccess>bbe61c5d-2640-49a1-a91a-464e68b77d9f</onsuccess>
+    <code><![CDATA[StripedText = Regex.Replace(xmlInput, "<(.|\\n)*?>", string.Empty);
+]]></code>
+  </stage>
+  <stage stageid="ed2a7064-3930-4295-93c7-a1a1d50038d3" name="DocID" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8261b863-a3e1-45bb-af1b-c2cb06386e04" name="strip xml tags3" type="Code">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="xmlInput" expr="[DocID]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="StripedText" stage="Document Level Fields Collection.DocID" />
+    </outputs>
+    <onsuccess>3d05861b-5202-496d-861c-7fa9acc168a0</onsuccess>
+    <code><![CDATA[StripedText = Regex.Replace(xmlInput, "<(.|\\n)*?>", string.Empty);
+]]></code>
+  </stage>
+  <stage stageid="3d05861b-5202-496d-861c-7fa9acc168a0" name="getDocType" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="XML" narrative="The xml to get elements from" expr="[CurrentDocument]" />
+      <input type="text" name="Element Name" narrative="The name of the xml elements to get" expr="&quot;Type&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Elements" narrative="The collection of xml elements that match the given name and for each element its outer xml" stage="DocumentType" />
+    </outputs>
+    <onsuccess>af8f3322-fdc0-4771-a057-618232a3bf4a</onsuccess>
+    <resource object="Utility - Strings" action="Get XML Elements" />
+  </stage>
+  <stage stageid="cc18cace-9b77-47c3-b3b2-7450db8708fb" name="DocumentType" type="Collection">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="af8f3322-fdc0-4771-a057-618232a3bf4a" name="GetDocTypeFromCollection" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>75</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[DocumentType]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;XML&quot;" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="DocType" />
+    </outputs>
+    <onsuccess>97630b47-5943-4d17-9b7c-bf1112656527</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="97630b47-5943-4d17-9b7c-bf1112656527" name="strip xml tags4" type="Code">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="xmlInput" expr="[DocType]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="StripedText" stage="Document Level Fields Collection.DocType" />
+    </outputs>
+    <onsuccess>54b555d8-ba61-44eb-bf86-272a91b21efd</onsuccess>
+    <code><![CDATA[StripedText = Regex.Replace(xmlInput, "<(.|\\n)*?>", string.Empty);
+]]></code>
+  </stage>
+  <stage stageid="52a920ff-5d72-485a-9b17-db325ee4dbd7" name="DocType" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9c7ae6b6-1295-47df-aaaf-754d04745ea0" name="add row to collection" type="Action">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>150</displayx>
+    <displayy>120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Document Level Fields Collection&quot;" />
+    </inputs>
+    <onsuccess>321466bf-45eb-4166-9df1-d8c863908209</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="97aec9d7-11db-4108-b00e-d7a959819775" name="documentLevelFieldsCount" type="Data">
+    <subsheetid>6d059bda-1d45-4f04-b6d7-f7e58b0ee437</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b3b24ed7-a2f1-4340-a7a6-f175b94fe6f5" name="docType" type="Data">
+    <subsheetid>4b52e452-382f-4755-89be-ac251b511c3d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-90</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

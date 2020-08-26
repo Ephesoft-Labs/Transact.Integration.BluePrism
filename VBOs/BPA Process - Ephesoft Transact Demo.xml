@@ -1,0 +1,388 @@
+﻿<process name="BatchUpload to Ephesoft Review Screen Checked" version="1.0" bpversion="6.4.2.10610" narrative="This is an example of how BP and Ephesoft can process Images and get the data back out in a meaningful way." byrefcollection="true" preferredid="8ee6d5dd-c1de-4336-a201-587437877df5">
+  <view>
+    <camerax>15</camerax>
+    <cameray>210</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="809eaad5-ac88-4fad-9899-38250bcf0b0f" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>4f40be9b-695e-40bb-9329-abfbd370950e</onsuccess>
+  </stage>
+  <stage stageid="692fe42e-181a-4843-aac4-f0f02b27e89d" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>405</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="5f108755-d545-4aa9-b117-1a4bbeb2f468" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="653f1a69-7aae-4b3b-ad4b-dcca5793996d" name="BatchInstanceID" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4f40be9b-695e-40bb-9329-abfbd370950e" name="GenerateBatchName" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="text" name="GUID" narrative="The new guid" stage="GGUIDBatchName" />
+    </outputs>
+    <onsuccess>4d983fe9-871a-4852-a403-7cd93c07d5f4</onsuccess>
+    <resource object="Utility - Strings" action="Generate New GUID" />
+  </stage>
+  <stage stageid="7070e217-4353-4afe-ac89-12a0021c31b5" name="GGUIDBatchName" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cc34cd25-2403-442c-8d6e-4a5fbbd80c4c" name="GetBatchStatus" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="url" expr="[EphesoftServerURL]" />
+      <input type="text" name="username" expr="[username]" />
+      <input type="password" name="password" expr="[password]" />
+      <input type="text" name="batchInstanceID" narrative="The batch Instance ID to find out the status" expr="[BatchInstanceID]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Batch Status" stage="BatchStatus" />
+    </outputs>
+    <onsuccess>6f8e6578-af55-424d-baea-b7a96830467e</onsuccess>
+    <resource object="Ephesoft Transact - Web Services API VBO" action="Get Batch Instances Status" />
+  </stage>
+  <stage stageid="38965782-506e-4764-9f8f-251457138d6c" name="EphesoftServerURL" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">http://seus-blue-001:8080</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3d681518-04db-4af2-af27-cf4a2ac74826" name="password" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-165</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>37,16,25,95</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f8596161-9580-4cef-b1f5-e3a2fd12788a" name="username" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-165</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">ephesoft</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8915173a-2afe-4065-9fa4-c3147be88b7c" name="BatchStatus" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bc227f95-261f-44b6-a460-d3e626b849c0" name="FilePaths" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Path" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Path" type="text" value="C:\Invoices\Batch 2\000001.pdf" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="4d983fe9-871a-4852-a403-7cd93c07d5f4" name="UplaodBatch To Transact" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="url" narrative="Ephesoft Transact Server URL" expr="[EphesoftServerURL]" />
+      <input type="text" name="username" narrative="Ephesoft Transact Username" expr="[username]" />
+      <input type="password" name="password" narrative="Ephesoft Transact Password" expr="[password]" />
+      <input type="text" name="BatchClassID" narrative="Transact Batch Class ID" expr="&quot;BC5&quot;" />
+      <input type="text" name="BatchName" narrative="Name of Batch Instance" expr="[GGUIDBatchName]" />
+      <input type="collection" name="FilePaths" narrative="Collection of File Paths PDF/Tif" expr="[FilePaths]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="BatchInstanceID" narrative="Batch Insatnce ID of the Upladed Batch" stage="BatchInstanceID" />
+    </outputs>
+    <onsuccess>cc34cd25-2403-442c-8d6e-4a5fbbd80c4c</onsuccess>
+    <resource object="Ephesoft Transact - Web Services API VBO" action="Upload Batch" />
+  </stage>
+  <stage stageid="e2739e29-49cc-49a7-8c2d-708f38263006" name="XML Response" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="330f3755-7c66-4f86-9231-a7606fb90258" name="GetXMLData" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path the file to read the text from" expr="&quot;C:\Users\ephesoft\Downloads\BI2711C_batch.xml&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="" />
+      <output type="text" name="Text" narrative="The text of the file" stage="XML Response" />
+    </outputs>
+    <onsuccess>4897fa99-9f2c-4c23-944d-bafce75dd595</onsuccess>
+    <resource object="FileMgmt_2" action="Read All Text from File" />
+  </stage>
+  <stage stageid="6f8e6578-af55-424d-baea-b7a96830467e" name="wait for batch xml to drop" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Folder" narrative="The folder in which to look for files" expr="&quot;\\seus-blue-001\SharedFolders\final-drop-folder\SF86Export&quot;" />
+      <input type="text" name="Patterns CSV" narrative="The comma seperated list of wildcard patterns" expr="" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="" />
+      <output type="text" name="Message" narrative="A message if unsuccessful" stage="" />
+      <output type="collection" name="Files" narrative="The collection of files found" stage="collectionOfExportedFiles" />
+    </outputs>
+    <onsuccess>f7b354f1-fcce-4d5f-90e7-fa41b2ae7671</onsuccess>
+    <resource object="Utility - File Management" action="Get Files" />
+  </stage>
+  <stage stageid="f7b354f1-fcce-4d5f-90e7-fa41b2ae7671" name="start loop through files" type="LoopStart">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>65cb2c64-39b4-4669-bbf6-0e89544cec17</onsuccess>
+    <groupid>ce588c57-e9fc-4df2-bdca-81ba31469fb9</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>collectionOfExportedFiles</loopdata>
+  </stage>
+  <stage stageid="e51ee4a6-0f40-4284-9842-7806ac31a1e7" name="start loop through files" type="LoopEnd">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>225</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>a65290a7-962a-41c9-aacc-478e517b4647</onsuccess>
+    <groupid>ce588c57-e9fc-4df2-bdca-81ba31469fb9</groupid>
+  </stage>
+  <stage stageid="65cb2c64-39b4-4669-bbf6-0e89544cec17" name="check if batch xml is present" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The name of the file to check" expr="&quot;\\seus-blue-001\SharedFolders\final-drop-folder\SF86Export\&quot;&amp;[BatchInstanceID]&amp;&quot;_batch.xml&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the file exists" stage="fileExported" />
+    </outputs>
+    <onsuccess>e51ee4a6-0f40-4284-9842-7806ac31a1e7</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="3f90b27c-8d85-4570-83de-79fd499a8c10" name="fileExported" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a65290a7-962a-41c9-aacc-478e517b4647" name="isFilePresent" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[fileExported]" />
+    <ontrue>330f3755-7c66-4f86-9231-a7606fb90258</ontrue>
+    <onfalse>65cb2c64-39b4-4669-bbf6-0e89544cec17</onfalse>
+  </stage>
+  <stage stageid="4897fa99-9f2c-4c23-944d-bafce75dd595" name="ConvertToBPObjects" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>315</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="EphesoftXML" expr="[XML Response]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Ephesoft Objects" stage="EphesoftData" />
+    </outputs>
+    <onsuccess>b215b3c3-e794-405c-9798-c4dee998c467</onsuccess>
+    <resource object="Ephesoft Transact - Web Services API VBO" action="ConvertXMLtoBPObjects" />
+  </stage>
+  <stage stageid="446dc37d-a132-47db-8519-ecf2afe926b4" name="EphesoftData" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>315</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="DocID" type="text" description="This is the document ID" />
+      <field name="DocType" type="text" description="This is the document type" />
+      <field name="Name" type="text" description="If Present a document level field name" />
+      <field name="Value" type="text" description="If Presen document Level Field value" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="b215b3c3-e794-405c-9798-c4dee998c467" name="getValueFromCollection" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>360</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="32" />
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[EphesoftData]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="FirstName" />
+    </outputs>
+    <onsuccess>692fe42e-181a-4843-aac4-f0f02b27e89d</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="ebb0777d-ba0f-4915-bb8c-f8f2a0964239" name="FirstName" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>360</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bd8e7de1-4203-4abf-9cfa-d263f51e643b" name="collectionOfExportedFiles" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
